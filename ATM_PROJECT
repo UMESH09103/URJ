@@ -1,0 +1,58 @@
+import java.util.Scanner;
+
+public class project {
+    public static void main(String[] args) {
+        System.out.println("*************************************************************");
+        int balance = 1000;
+        System.out.println("*WELCOME THE ATM MACHINE OF BANK FO MAHARASHTRA *");
+        Scanner sc = new Scanner(System.in);
+        System.out.print("please enter your correct 4 digit pin code : ");
+        int pin = sc.nextInt();
+        if (1000 <= pin && 9999 >= pin) {
+
+            System.out.println("1.Deposite amount in your account ");
+            System.out.println("2.Credit amount in your account");
+            System.out.println("3.check your bank balance");
+            System.out.println("4.exit");
+            System.out.print("# please choice the condition => ");
+            int a = sc.nextInt();
+            switch (a) {
+                case 1:
+                    System.out.print("enter the withdraw amount ::");
+                    int withdraw = sc.nextInt();
+                    int amo;
+                    amo = balance - withdraw;
+                    if (withdraw > balance) {
+                        System.out.println("your account balance is low");
+                    } else {
+                        System.out.println("please wait !your transction will be procede  ");
+                    }
+                    break;
+                case 2:
+                    System.out.print("enter the cradit amount :: ");
+                    int Credit = sc.nextInt();
+                    amo = balance + Credit;
+                    System.out.println("Your " + Credit + " amount succefully credit in your bank account");
+                    break;
+                case 3:
+                    System.out.print("your bank balance is ");
+                    System.out.println(balance);
+                    break;
+                case 4:
+                    System.out.println("THANK YOU FOR VISITING MAHA BANK ATM");
+                    System.out.println("**********************************************************");
+
+                default:
+                    System.out.println("please choose available condition ");
+                    break;
+
+            }
+            System.out.println("***THANK YOU***");
+        } else {
+            System.out.println("*******************your pin code is Wrong**************");
+            System.out.println("XXXXXXXX TRY AGAIN XXXXXXXXXX");
+        }
+
+    };
+
+}
